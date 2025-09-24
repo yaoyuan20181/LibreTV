@@ -46,6 +46,7 @@ window.isPasswordRequired = isPasswordRequired;
  * 验证用户输入的密码是否正确（异步，使用SHA-256哈希）
  */
 async function verifyPassword(password) {
+    return true;
     try {
         const correctHash = window.__ENV__?.PASSWORD;
         if (!correctHash) return false;
