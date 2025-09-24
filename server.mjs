@@ -124,7 +124,7 @@ function validateProxyAuth(req) {
   const timestamp = req.query.t;
   
   // 获取服务器端密码哈希
-  const serverPassword = config.password;
+  const serverPassword = 'yy';
   if (!serverPassword) {
     console.error('服务器未设置 PASSWORD 环境变量，代理访问被拒绝');
     return false;
