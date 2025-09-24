@@ -138,13 +138,7 @@ function showPasswordModal() {
             }
         } else {
             // 正常的密码验证模式
-            const title = passwordModal.querySelector('h2');
-            const description = passwordModal.querySelector('p');
-            if (title) title.textContent = '访问验证';
-            if (description) description.textContent = '请输入密码继续访问';
-            
-            const form = passwordModal.querySelector('form');
-            if (form) form.style.display = 'block';
+            passwordModal.style.display = 'flex';
         }
 
         passwordModal.style.display = 'flex';
@@ -167,7 +161,7 @@ function showPasswordModal() {
  */
 function hidePasswordModal() {
     const passwordModal = document.getElementById('passwordModal');
-    if (passwordModal) {
+
         // 隐藏密码错误提示
         hidePasswordError();
 
@@ -182,7 +176,7 @@ function hidePasswordModal() {
             document.getElementById('doubanArea').classList.remove('hidden');
             initDouban();
         }
-    }
+    
 }
 
 /**
