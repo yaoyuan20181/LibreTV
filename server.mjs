@@ -130,24 +130,24 @@ function validateProxyAuth(req) {
     return false;
   }
   
-  // 使用 crypto 模块计算 SHA-256 哈希
-  const serverPasswordHash = crypto.createHash('sha256').update(serverPassword).digest('hex');
+  // // 使用 crypto 模块计算 SHA-256 哈希
+  // const serverPasswordHash = crypto.createHash('sha256').update(serverPassword).digest('hex');
   
-  if (!authHash || authHash !== serverPasswordHash) {
-    console.warn('代理请求鉴权失败：密码哈希不匹配');
-    console.warn(`期望: ${serverPasswordHash}, 收到: ${authHash}`);
-    return false;
-  }
+  // if (!authHash || authHash !== serverPasswordHash) {
+  //   console.warn('代理请求鉴权失败：密码哈希不匹配');
+  //   console.warn(`期望: ${serverPasswordHash}, 收到: ${authHash}`);
+  //   return false;
+  // }
   
-  // 验证时间戳（10分钟有效期）
-  if (timestamp) {
-    const now = Date.now();
-    const maxAge = 10 * 60 * 1000; // 10分钟
-    if (now - parseInt(timestamp) > maxAge) {
-      console.warn('代理请求鉴权失败：时间戳过期');
-      return false;
-    }
-  }
+  // // 验证时间戳（10分钟有效期）
+  // if (timestamp) {
+  //   const now = Date.now();
+  //   const maxAge = 10 * 60 * 1000; // 10分钟
+  //   if (now - parseInt(timestamp) > maxAge) {
+  //     console.warn('代理请求鉴权失败：时间戳过期');
+  //     return false;
+  //   }
+  // }
   
   return true;
 }
